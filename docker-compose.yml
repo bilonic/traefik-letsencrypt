@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  traefik:
+    image: traefik:1.7.10
+    container_name: traefik
+    networks:
+      - webgateway
+    ports:
+      - "80:80"
+      - "443:443"
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/traefik.toml
+      - ./certs:/certs
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5M"
+        max-file: "3"
+
+networks:
+  webgateway:
+    driver: bridge
