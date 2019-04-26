@@ -4,8 +4,6 @@
 
  * Copy `traefik.toml_example` to `traefik.toml` and change `email` variable to your email address;
 
- * Copy `hosts-example` to `hosts` and replace example URL to valid;
-
 ## Run 
 
 Run `docker-compose up -d` 
