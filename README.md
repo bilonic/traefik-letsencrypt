@@ -20,11 +20,12 @@ version: '2'
 networks:
   default:
     external:
-      name: traefik_webgateway
+      name: traefik-letsencrypt_webgateway
 
 services:
   nginx:
     image: nginx:alpine
+    hostname: example.com
     labels:
       # Labels for Traefik
       - "traefik.enable=true"
