@@ -33,4 +33,4 @@ services:
       - "traefik.frontend.headers.SSLHost=example.com"
 ```
 
-Check you domain in browser
+Check you're domain in a browser
